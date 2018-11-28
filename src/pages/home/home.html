@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="h-title">
+      hinfo - ข้อมูลเพื่อสุขภาพ
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div id="map" class="map">
+    <div>
+
+      <button ion-fab color="light" id="feb" (click)="showLocation()" style="bottom: 60%">
+        <ion-icon name="locate"></ion-icon>
+      </button>
+
+      <button ion-fab color="light" id="feb" (click)="selectLayers()" style="bottom: 50%">
+        <ion-icon name="logo-buffer"></ion-icon>
+      </button>
+
+      <button ion-fab color="light" id="feb" (click)="gotoReport()" style="bottom: 40%">
+        <ion-icon name="create"></ion-icon>
+      </button>
+
+      <button ion-fab color="light" id="feb" (click)="gotoList()" style="bottom: 30%">
+        <ion-icon name="list-box"></ion-icon>
+      </button>
+
+    </div>
+  </div>
+</ion-content>

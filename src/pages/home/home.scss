@@ -1,0 +1,34 @@
+page-home {
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .h-title {
+    font-family: 'kanit';
+    color: rgb(255, 255, 255) !important;
+  }
+
+  #feb {
+    opacity: 0.6;
+    width: 50px;
+    height: 50px;
+    margin-right: 9px;
+    right: 0;
+    position: absolute;
+    z-index: 1000;
+  }
+
+  .scroll-content {
+    background: #1e1e1e;
+  }
+
+  ion-navbar .toolbar-background {
+    background: transparent;
+    background: rgba(153, 202, 60, 0.70) !important;
+  }
+
+  ion-content .scroll-content {
+    margin-top: 0px !important;
+  }
+}

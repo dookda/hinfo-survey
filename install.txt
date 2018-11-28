@@ -1,0 +1,20 @@
+npm install leaflet --save
+ionic cordova plugin add cordova-plugin-geolocation
+npm install @ionic-native/geolocation --save
+
+
+ionic cordova plugin add cordova-plugin-geolocation --variable GEOLOCATION_USAGE_DESCRIPTION="To locate you"
+npm install --save @ionic-native/geolocation
+
+ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
+
+npm install --save @ionic/storage
+ionic cordova plugin add cordova-sqlite-storage
+
+$> ionic cordova plugin add cordova-plugin-googlemaps \
+  --variable API_KEY_FOR_ANDROID="(API_KEY_FOR_ANDROID)" \
+  --variable API_KEY_FOR_IOS="(API_KEY_FOR_IOS)"
+
+$ionic cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="AIzaSyCLtG-lyGz2zIbK2J3rwLK0MLN_zHLR3ro"
+$> npm install --save @ionic-native/core@latest @ionic-native/google-maps@latest
