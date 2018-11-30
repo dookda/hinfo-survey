@@ -42,13 +42,13 @@ export class HomePage {
 
   ionViewDidLoad() {
     this.loadMap();
-    this.showLocation();
+    // this.showLocation();
   }
 
   loadMap() {
     this.map = L.map('map', {
       center: [16.716543, 100.239446],
-      zoom: 8,
+      zoom: 12,
       zoomControl: false,
       attributionControl: false,
     })
@@ -106,27 +106,27 @@ export class HomePage {
 
     this.platform.ready().then(() => {
 
-      this.geolocation.getCurrentPosition({ enableHighAccuracy: false }).then((res) => {
-        this.pos = [res.coords.latitude, res.coords.longitude];
-        this.lat = res.coords.latitude;
-        this.lon = res.coords.longitude;
+      // this.geolocation.getCurrentPosition({ enableHighAccuracy: false }).then((res) => {
+      //   this.pos = [res.coords.latitude, res.coords.longitude];
+      //   this.lat = res.coords.latitude;
+      //   this.lon = res.coords.longitude;
 
-        this.removeMarker();
-        this.reportProvider.setLocation(this.lat, this.lon);
-        this.map.setView(this.pos, 16);
-        this.marker = L.marker(this.pos, {
-          icon: myIcon,
-          draggable: true,
-          iconName: 'myPoint'
-        }).addTo(this.map);
+      //   this.removeMarker();
+      //   this.reportProvider.setLocation(this.lat, this.lon);
+      //   this.map.setView(this.pos, 16);
+      //   this.marker = L.marker(this.pos, {
+      //     icon: myIcon,
+      //     draggable: true,
+      //     iconName: 'myPoint'
+      //   }).addTo(this.map);
 
-        loading.dismiss();
-        this.marker.on('dragend', function (e) {
-          this.pos = [e.target._latlng.lat, e.target._latlng.lng];
-        });
-      }).catch((error) => {
-        console.log('Error getting location', error);
-      });
+      //   loading.dismiss();
+      //   this.marker.on('dragend', function (e) {
+      //     this.pos = [e.target._latlng.lat, e.target._latlng.lng];
+      //   });
+      // }).catch((error) => {
+      //   console.log('Error getting location', error);
+      // });
 
       let watch = this.geolocation.watchPosition();
       watch.subscribe((res) => {
@@ -143,16 +143,20 @@ export class HomePage {
           iconName: 'myPoint'
         }).addTo(this.map);
 
+        loading.dismiss();
+        this.marker.on('dragend', function (e) {
+          this.pos = [e.target._latlng.lat, e.target._latlng.lng];
+          console.log(this.pos);
+        });
       });
-      watch.subscribe();
     })
   }
 
   gotoReport() {
     if (this.lat === 0 || this.lon === 0) {
       const alert = this.alertCtrl.create({
-        title: 'ระบุตำแหน่งของท่าน',
-        subTitle: 'ไม่พบตำแหน่งของท่าน โปรดกลับไประบุตำแหน่งของท่านก่อนรายงาน',
+        title: 'ไม่พบข้อมูลตำแหน่ง',
+        subTitle: 'เปิดการใช้งาน location และกดค้นหาตำแหน่งก่อน',
         buttons: ['ตกลง']
       })
       alert.present()
