@@ -6,6 +6,7 @@ import { ReportProvider } from '../../providers/report/report';
 import { AddDataPage } from '../add-data/add-data';
 import { LayerPage } from '../layer/layer';
 import { ListPage } from '../list/list';
+import { ContactPage } from '../contact/contact';
 
 @Component({
   selector: 'page-home',
@@ -169,6 +170,10 @@ export class HomePage {
 
   gotoList() {
     this.navCtrl.push(ListPage)
+  }
+
+  gotoContact() {
+    this.navCtrl.push(ContactPage)
   }
 
   selectLayers() {

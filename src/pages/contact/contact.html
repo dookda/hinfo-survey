@@ -1,0 +1,39 @@
+<ion-header class="kanit">
+  <ion-navbar>
+    <ion-title>
+      Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="kanit">
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col>
+      <img src="./assets/imgs/icon512.png" />
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <ion-card>
+    <ion-card-content>
+      <p></p>
+      <p></p>
+      <p>ผู้เข้าใช้งาน: {{ fname }}</p>
+      <p></p>
+      <p></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <p></p>
+      <p></p>
+      <button ion-button full (click)="logout()">ออกจากระบบ</button>
+      <p></p>
+      <p></p>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

@@ -1,4 +1,3 @@
-
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -17,8 +16,10 @@ import { LayerPageModule } from '../pages/layer/layer.module';
 import { AddDataPageModule } from '../pages/add-data/add-data.module';
 import { DetailPageModule } from '../pages/detail/detail.module';
 import { ListPageModule } from '../pages/list/list.module';
-
-
+import { LoginPageModule } from './../pages/login/login.module';
+import { RegisterPageModule } from './../pages/register/register.module';
+import { UserProvider } from '../providers/user/user';
+import { ContactPageModule } from '../pages/contact/contact.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,10 @@ import { ListPageModule } from '../pages/list/list.module';
     LayerPageModule,
     AddDataPageModule,
     DetailPageModule,
-    ListPageModule
+    ListPageModule,
+    LoginPageModule,
+    RegisterPageModule,
+    ContactPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,7 +50,8 @@ import { ListPageModule } from '../pages/list/list.module';
     Geolocation,
     Camera,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ReportProvider
+    ReportProvider,
+    UserProvider
   ]
 })
 export class AppModule { }

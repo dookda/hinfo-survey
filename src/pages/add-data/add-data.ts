@@ -179,7 +179,7 @@ export class AddDataPage {
       };
     }
 
-    this.reportProvider.postMobileReport(data).then((res) => {
+    this.reportProvider.postMobileReport(data).then((res: any) => {
       toast.present();
       console.log(data);
     }, (error) => {
